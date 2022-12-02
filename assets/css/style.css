@@ -1,0 +1,276 @@
+:root {
+    --darkest-gray: #514E4E;
+    --dark-gray: #A0A0A0;
+    --medium-gray:  #E8E8E8;
+    --light-gray: #f8f8f8;
+    --red: #C95C5C;
+    --grid: rgba(78, 157, 194, 0.5);
+  
+    --shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    --shadow-hovered: 0 4px 5px rgba(0, 0, 0, 0.2);
+
+    --small-width: 390px;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--darkest-gray);
+}
+
+.app {
+    margin: 16px auto 0 auto;
+    max-width: var(--small-width);
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 32px;
+    border: 2px solid black;
+    border-radius: 32px;
+    padding: 32px 0;
+}
+
+/* ------------------------------- */
+/* -----------CREATE NEW TASK------------- */
+/* ------------------------------- */
+
+.main {
+    margin: 0 16px;
+}
+
+h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+#new-task-form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+#new-task-field {
+    flex-grow: 3;
+    height: 40px;
+    border: 1px solid var(--dark-gray);
+    border-radius: 4px;
+    color: var(--darkest-gray);
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 8px;
+}
+
+#new-task-field::placeholder {
+    color: var(--dark-gray);
+    opacity: 1;
+    font-weight: 400;
+}
+
+#new-task-field:hover {
+    background-color: var(--light-gray);
+}
+#new-task-field:focus {
+    outline: 1px solid var(--darkest-gray);
+    box-shadow: var(--shadow);
+}
+
+#new-task-submit {
+    flex-grow: 2;
+    cursor: pointer;
+    height: 40px;
+    font-weight: 500;
+    font-size: 1em;
+    background-color: var(--darkest-gray);
+    border: none;
+    border-radius: 4px;
+    color: var(--light-gray);
+    transition: 0.15s;
+}
+
+#new-task-submit:hover {
+    background-color: var(--dark-gray);
+    color: var(--darkest-gray);
+    box-shadow: var(--shadow);
+}
+
+#new-task-submit:active {
+    background-color: var(--medium-gray);
+}
+
+
+/* ------------------------------- */
+/* -----------TASKS LIST------------- */
+/* ------------------------------- */
+
+/* TODO create scroll bar for tasks only, and make it work the same on every browser */
+.tasks-list-container {
+    margin: 0 16px;
+    flex-grow: 1;
+    background-color: var(--medium-gray);
+    border-radius: 4px;
+    padding: 8px;
+    overflow-y: scroll;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+#tasks-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.task {
+    background-color: var(--light-gray);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition-property: box-shadow;
+    transition-duration: 0.15s;
+}
+
+.task:hover {
+    box-shadow: var(--shadow-hovered);
+}
+
+
+.task-name {
+    margin: 0 8px 0 8px;
+    flex-grow: 1;
+    font-size: 1rem;
+    color: var(--darkest-gray);
+    border: none;
+    background-color: transparent;
+    outline: none;
+}
+
+/* ------------------------------- */
+
+.delete-task {
+    opacity: 0;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
+    margin-right: 8px;
+    background-color: transparent;
+    border: none;
+    transition: 0.15s;
+}
+
+.task:hover .delete-task {
+    opacity: 1;
+}
+
+.delete-icon {
+    font-size: 24px;
+    color: var(--dark-gray);
+}
+
+.delete-task:hover .delete-icon {
+    color: var(--red);
+}
+
+.delete-task:active .delete-icon {
+    color: var(--darkest-gray);
+}
+
+/* ------------------------------- */
+
+.edit-task {
+    opacity: 0;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    transition: 0.15s;
+}
+
+.task:hover .edit-task {
+    opacity: 1;
+}
+
+.edit-icon {
+    font-size: 24px;
+    color: var(--dark-gray);
+    transition: 0.15s;
+}
+
+.edit-task:hover .edit-icon{
+    color: var(--darkest-gray);
+}
+
+.edit-task:active .edit-icon{
+    color: var(--dark-gray);
+}
+
+
+
+/* ------------------------------- */
+/* -----------SUM OF TASKS------------- */
+/* ------------------------------- */
+
+.tasks-sum {
+    margin: 0 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+#pending-tasks {
+    width: 50%;
+    flex-grow: 3;
+    font-weight: 500;
+}
+
+#clear-all {
+    flex-grow: 2;
+    cursor: pointer;
+    height: 40px;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--light-gray);
+    background-color: var(--darkest-gray);
+    border: none;
+    border-radius: 4px;
+    transition: 0.15s;
+}
+
+#clear-all:hover {
+    background-color: var(--red);
+    box-shadow: var(--shadow);
+}
+
+#clear-all:active {
+    background-color: var(--darkest-gray);
+    box-shadow: var(--shadow);
+}
