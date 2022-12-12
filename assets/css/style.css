@@ -29,9 +29,9 @@ body {
 }
 
 .app {
-    margin: 16px auto 0 auto;
+    margin: 0 auto;
     max-width: var(--small-width);
-    height: 800px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -128,6 +128,22 @@ h1 {
     overflow-y: scroll;
 }
 
+/* total width */
+.tasks-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* scrollbar itself */
+.tasks-list-container::-webkit-scrollbar-thumb {
+    background-color: var(--dark-gray);
+    border-radius: 4px;
+}
+
+/* set button(top and bottom of the scrollbar) */
+.tasks-list-container::-webkit-scrollbar-button {
+    display:none;
+}
+
 h2 {
     font-size: 1.25rem;
     font-weight: 500;
@@ -160,8 +176,9 @@ h2 {
 
 
 .task-name {
-    margin: 0 8px 0 8px;
+    margin: 0 8px;
     flex-grow: 1;
+    width: 50%;
     font-size: 1rem;
     color: var(--darkest-gray);
     border: none;
