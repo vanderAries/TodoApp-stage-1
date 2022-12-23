@@ -22,3 +22,6 @@ Tasks are not saved anywhere. Vanish after page refresh.
 - [x] Clear All tasks with button
 - [x] Default input validation
 - [x] Custom scrollbar
+
+## Additional info:
+HTML task list is rendered from JS array after each action. Array will be updated when adding, editing or deleting tasks.
