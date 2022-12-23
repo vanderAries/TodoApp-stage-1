@@ -6,7 +6,6 @@ let tasks = [];
 window.addEventListener("load", () => {
 
     const newTaskForm = document.querySelector("#new-task-form");
-    // const validationError = document.querySelector("#error");
 
     const clearAllBtn = document.querySelector("#clear-all");
 
@@ -26,22 +25,6 @@ window.addEventListener("load", () => {
 
         // Clear the input field
         event.target.reset();
-
-        // --------------------------------------------
-        // TODO: Add custom input validation
-        // [x] Added default browser validation with 'required' tag
-
-
-        // let messages = [];
-        // if (task === "" || task == null) {
-        //     messages.push("Task field cannot be empty")
-        // }
-
-        // if (messages.length > 0) {
-        //     event.preventDefault();
-        //     validationError.innerText = messages.join(', ')
-        // }
-        // ---------------------------------------------
 
         // Render the tasks
         displayTasks();
@@ -117,7 +100,7 @@ function displayTasks() {
 
         tasksList.appendChild(taskElement);
 
-        // Liten on edit button to turn on modifications and styles
+        // Listen on edit button to turn on modifications and styles
         taskEditBtn.addEventListener('click', () => {
             // Maybe change class with diffetent props instead of style change in JS
 

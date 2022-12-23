@@ -118,7 +118,6 @@ h1 {
 /* -----------TASKS LIST------------- */
 /* ------------------------------- */
 
-/* TODO create scroll bar for tasks only, and make it work the same on every browser */
 .tasks-list-container {
     margin: 0 16px;
     flex-grow: 1;
